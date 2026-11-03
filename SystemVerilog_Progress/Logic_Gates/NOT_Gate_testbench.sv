@@ -1,29 +1,31 @@
-module tb_inverter;
+module tb_not_gate;
   
-  // 1. Signals to drive and monitor the Device Under Test (DUT)
+  // 1. Signals to drive the Device Under Test (DUT)
   logic in_sig;
   logic out_sig;
   
-  // 2. Instantiate the DUT (connect signals to ports)
-  inverter uut (
+  // 2. Instantiate the NOT Gate
+  not_gate uut (
     .in(in_sig),
     .out(out_sig)
   );
   
-  // 3. Stimulus generation (the test procedure)
+  // 3. Truth table verification
   initial begin
+    $display("--------------");
+    $display("Time | Input | Out");
+    $display("--------------");
+
+    // Input 0 -> Output 1
+    in_sig = 1'b0; #10;
+    $display("%0t   |   %b   | %b", $time, in_sig, out_sig); 
+ 
+    // Input 1 -> Output 0
+    in_sig = 1'b1; #10;
+    $display("%0t   |   %b   | %b", $time, in_sig, out_sig);     
     
-    // Monitor changes in real time
-    $monitor("Time=%0t | in=%b -> out=%b", $time, in_sig, out_sig);
-    
-    // Apply fundamental test vectors
-    in_sig = 1'b0;
-    #10; 			// Wait 10 time units
-    
-    in_sig = 1'b1;
-    #10;			// Wait 10 time units
-    
-    $finish;		// Terminate simulation
+    $display("--------------");
+    $finish;
   end
   
 endmodule
