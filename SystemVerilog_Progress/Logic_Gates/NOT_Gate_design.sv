@@ -1,6 +1,6 @@
-module inverter (
-    input  logic in,
-    output logic out
+module not_gate (
+  input logic a,
+  output logic out
 );
-    assign out = ~in;
+  assign out = ~a;
 endmodule
