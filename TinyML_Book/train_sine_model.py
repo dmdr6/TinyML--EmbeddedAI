@@ -31,7 +31,7 @@ plt.show()
 
 # Reserve 60% of data for training and 20% for validation; the remaining 20% is for testing
 TRAIN_SPLIT = int(0.6 * SAMPLES)
-TEST_SPLIT = int((0.2 * SAMPLES + TRAIN_SPLIT))
+TEST_SPLIT = int(0.2 * SAMPLES + TRAIN_SPLIT)
 
 # Split arrays into train, validation, and test sets at the calculated index boundaries
 x_train, x_validate, x_test = np.split(x_values, [TRAIN_SPLIT, TEST_SPLIT])
@@ -53,3 +53,28 @@ model_1.compile(optimizer='rmsprop', loss='mse', metrics=['mae'])
 # Print model architecture summary
 model_1.summary()
 
+# 4. Build a larger model with an extra hidden layer for higher capacity
+
+model_2 = tf.keras.Sequential([
+    layers.Dense(16, activation='relu', input_shape=(1,)),  # First hidden layer
+    layers.Dense(16, activation='relu'),                    # Second hidden layer
+    layers.Dense(1)                                         # Output layer
+])
+
+# Compile using a modern Adam optimizer with an explicit learning rate
+model_2.compile(
+    optimizer=tf.keras.optimizers.Adam(learning_rate=0.01),
+    loss='mse',
+    metrics=['mae']
+)
+
+# Print the summary of the deeper network architecture
+model_2.summary()
+
+# 5. Train the model, validating performance and tracking history across epochs
+history_2 = model_2.fit(
+    x_train, y_train,
+    epochs=600,
+    batch_size=16,
+    validation_data=(x_validate, y_validate)
+)
