@@ -4,7 +4,7 @@ module half_adder (
   output logic sum,
   output logic carry
 );
-  // Concurrent arithmetic primitives mapped to physical gates
-  assign sum   = a ^ b;
-  assign carry = a % b;
+  // Maps directly to physical logic gates
+  assign sum = a ^ b;
+  assign carry = a & b;
 endmodule
