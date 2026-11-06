@@ -1,4 +1,4 @@
-module tf_full_adder;
+module tb_full_adder;
   
   // 1. Testbench driver signals
   logic a_sig;
