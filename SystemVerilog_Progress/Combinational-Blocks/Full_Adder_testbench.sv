@@ -24,7 +24,7 @@ module tb_full_adder;
     $display("Time | Cin | A | B | Cout | Sum");
     $display("-------------------------------");
     
-    // Exhaustive 3-bit combinations (0 to 7)
+    // 3-bit combinations (0 to 7)
     
     // Combination 0: 000
     cin_sig = 1'b0; a_sig = 1'b0; b_sig = 1'b0; #10;    
@@ -37,8 +37,7 @@ module tb_full_adder;
     // Combination 2: 010
     cin_sig = 1'b0; a_sig = 1'b1; b_sig = 1'b0; #10;    
     $display("%0t   |  %b  | %b | %b |   %b  |  %b", $time, cin_sig, a_sig, b_sig, cout_sig, sum_sig);   
-    
-    
+  
     // Combination 3: 011
     cin_sig = 1'b0; a_sig = 1'b1; b_sig = 1'b1; #10;    
     $display("%0t   |  %b  | %b | %b |   %b  |  %b", $time, cin_sig, a_sig, b_sig, cout_sig, sum_sig);
