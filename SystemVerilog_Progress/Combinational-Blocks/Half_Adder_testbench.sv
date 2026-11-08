@@ -1,4 +1,4 @@
-module tb_half_module;
+module tb_half_adder;
   
   // 1. Testbench driver signals
   logic a_sig;
