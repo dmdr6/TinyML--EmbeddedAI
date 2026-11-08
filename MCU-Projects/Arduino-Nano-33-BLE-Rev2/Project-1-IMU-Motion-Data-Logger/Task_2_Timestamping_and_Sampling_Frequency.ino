@@ -70,3 +70,4 @@ void loop() {
     Serial.println(gz, 4);
   }
 }
+
