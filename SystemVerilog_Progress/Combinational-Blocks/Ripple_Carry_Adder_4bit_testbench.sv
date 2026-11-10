@@ -4,7 +4,7 @@ module tb_rca_4bit;
   logic [3:0] b_sig;
   logic       cin_sig;
   
-  // Outputs monitored from the DU
+  // Outputs monitored from the DUT
   logic [3:0] sum_sig;
   logic       cout_sig;
 
