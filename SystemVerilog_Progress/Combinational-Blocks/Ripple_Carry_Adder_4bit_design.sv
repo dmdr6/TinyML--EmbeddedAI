@@ -1,23 +1,23 @@
 // 1-bit Full Adder Primitive
 module full_adder (
-  input logic a,
-  input logic b,
-  input logic cin,
+  input logic  a,
+  input logic  b,
+  input logic  cin,
   output logic sum,
-  output logic carry
+  output logic cout
 );
-  // Compute sum and carry
+  // Compute sum and carry-out
   assign sum = a ^ b ^ cin;
-  assign carry = (a & b) | (cin & (a ^ b));
+  assign cout = (a & b) | (cin & (a ^ b));
 endmodule
 
 // 4-bit Ripple-Carry Adder built by chaining 4 Full Adders
 module rca_4bit (
   input logic [3:0]  a,
   input logic [3:0]  b,
-  input logic		 cin,
+  input logic		     cin,
   output logic [3:0] sum,
-  output logic		 cout
+  output logic		   cout
 );
   // Internal carry wires connecting the stages together
   logic c1, c2, c3;
