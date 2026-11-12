@@ -19,7 +19,7 @@ def generate_sensor_dataset(n_samples=1000, noise_std=0.8, seed=42):
     # 1. Ground truth reference values spanning the operational range (e.g., 0°C to 100°C)
     y_ref = np.linspace(0, 100, n_samples)
     
-    # 2. True physical parameters of our simulated imperfect sensor hardware
+    # 2. True physical parameters of the simulated imperfect sensor hardware
     true_gain = 1.05       # 5% sensitivity distortion
     true_offset = 3.2      # 3.2 unit voltage bias offset
     
@@ -30,7 +30,7 @@ def generate_sensor_dataset(n_samples=1000, noise_std=0.8, seed=42):
     
     return x_raw, y_ref
 
-# --- Task 1 Execution ---
+# Task 1 Execution
 if __name__ == "__main__":
     X_raw, Y_ref = generate_sensor_dataset(n_samples=1000)
     
@@ -38,5 +38,3 @@ if __name__ == "__main__":
     print(f"Raw Sensor Min/Max:   {X_raw.min():.2f} / {X_raw.max():.2f}")
     print(f"Reference Min/Max:    {Y_ref.min():.2f} / {Y_ref.max():.2f}")
     print(f"First 5 Raw Readings: {np.round(X_raw[:5], 2)}")
-    print(f"First 5 Ref Values:   {np.round(Y_ref[:5], 2)}")
-  
