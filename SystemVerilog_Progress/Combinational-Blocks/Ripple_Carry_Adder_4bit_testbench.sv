@@ -7,7 +7,7 @@ module tb_rca_4bit;
   
   // 2. Outputs monitored from the DUT
   logic [3:0] sum_sig;
-  logic 	   cout_sig;
+  logic 	  cout_sig;
   
   // 3. Instantiate the 4-bit Ripple-Carry Adder (DUT)
   rca_4bit uut (
