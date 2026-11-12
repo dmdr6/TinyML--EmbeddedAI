@@ -15,9 +15,9 @@ endmodule
 module rca_4bit (
   input logic [3:0]  a,
   input logic [3:0]  b,
-  input logic		  cin,
+  input logic		 cin,
   output logic [3:0] sum,
-  output logic		cout
+  output logic		 cout
 );
   // Internal carry wires connecting the stages together
   logic c1, c2, c3;
