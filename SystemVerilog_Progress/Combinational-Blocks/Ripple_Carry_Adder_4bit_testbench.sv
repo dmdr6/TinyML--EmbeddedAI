@@ -3,11 +3,11 @@ module tb_rca_4bit;
   // 1. Testbench driver signals (vectors)
   logic [3:0] a_sig;
   logic [3:0] b_sig;
-  logic		    cin_sig;
+  logic		  cin_sig;
   
   // 2. Outputs monitored from the DUT
   logic [3:0] sum_sig;
-  logic 	    cout_sig;
+  logic 	   cout_sig;
   
   // 3. Instantiate the 4-bit Ripple-Carry Adder (DUT)
   rca_4bit uut (
