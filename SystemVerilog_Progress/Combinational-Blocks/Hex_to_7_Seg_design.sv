@@ -16,12 +16,12 @@ module hex_to_7seg (
       4'h7: segments = 7'b0000111;	// Display '7'
       4'h8: segments = 7'b1111111;	// Display '8'
       4'h9: segments = 7'b1101111;	// Display '9'
-      4'hA: segments = 7'b1110111;	// Display 'A'
+      4'hA: segments = 7'b1110111;	// Display 'a'
       4'hB: segments = 7'b1111100;	// Display 'b'
-      4'hC: segments = 7'b0111001;	// Display 'C'
+      4'hC: segments = 7'b0111001;	// Display 'c'
       4'hD: segments = 7'b1011110;	// Display 'd'
-      4'hE: segments = 7'b1111001;	// Display 'E'
-      4'hF: segments = 7'b1110001;	// Display 'F'
+      4'hE: segments = 7'b1111001;	// Display 'e'
+      4'hF: segments = 7'b1110001;	// Display 'f'
       default: segments = 7'b0000000;	// Off for safety
     endcase
   end
